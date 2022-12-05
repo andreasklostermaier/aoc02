@@ -5,19 +5,6 @@ use std::path::Path;
 
 fn main() {
 
-    solution_a();
- 
-}
-
-fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
-where P: AsRef<Path>, {
-    let file = File::open(filename)?;
-    Ok(io::BufReader::new(file).lines())
-}
-
-
-fn solution_a() {
-
     let mut total_score_1 = 0u32;
     let mut total_score_2 = 0u32;
 
@@ -62,7 +49,12 @@ fn solution_a() {
     // Part 2
     println!("Solution A");
     println!("The total score in part two is {}.", total_score_2);
-
+ 
 }
 
 
+fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
+where P: AsRef<Path>, {
+    let file = File::open(filename)?;
+    Ok(io::BufReader::new(file).lines())
+}
